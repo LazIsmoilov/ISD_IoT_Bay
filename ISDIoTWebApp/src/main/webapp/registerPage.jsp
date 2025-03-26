@@ -31,19 +31,7 @@
                     </select>
                 </td>
             </tr>
-            <tr>
-                <td>Favorite Color: </td>
-                <td>
-                    <select name="favoriteColor" required>
-                        <option value="red">Red</option>
-                        <option value="blue">Blue</option>
-                        <option value="green">Green</option>
-                        <option value="yellow">Yellow</option>
-                        <option value="purple">Purple</option>
-                        <option value="pink">Pink</option>
-                    </select>
-                </td>
-            </tr>
+            
             <tr><td>Agree to TOS: </td><td><input type="checkbox" name="agreeToTOS" value="yes" required></td></tr>
             <tr><td></td><td><input type="submit" value="Register"></td></tr>
         </table>

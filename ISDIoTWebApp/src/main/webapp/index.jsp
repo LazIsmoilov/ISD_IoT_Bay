@@ -1,22 +1,38 @@
-<%@page contentType="text/html" pageEncoding="UTF-8" %>
-<%@page session="true" %>
 
-<!DOCTYPE html>
+
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 
 <html>
-<head>
-    <title>IoT-Bay Store</title>
-    <link rel="stylesheet" type="text/css" href="landingPageStyle.css">
-</head>
-<body>
-<%--<nav>--%>
-<%--    <a href="index.jsp">Home</a>--%>
-<%--    <a href="register.jsp">Register</a>--%>
-<%--    <a href="welcomePage.jsp">Welcome</a>--%>
-<%--</nav>--%>
-<h1>IoT-Bay Products</h1>
-<p>Browse and purchase the best IoT devices!</p>
-<a href="registerPage.jsp">Register here!</a>
-</body>
-</html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Home</title>
+        <link rel="stylesheet" href="style.css">
 
+        <style>
+            iframe {
+                width: 100%;
+                height: 700px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+        </header>
+        <section>
+            <nav>
+                <ul style = margin-centre>
+                    <li><a href="landing.jsp" target="content">HOME</a></li>
+                    <li><a href="register.jsp" target="content">REGISTER</a></li>
+                    <li><a href="about.jsp" target="content">ABOUT</a></li>
+                    <li><a href="contact.html" target="content">CONTACT</a></li>
+
+
+                    <li><a href="logout.html" target="content">LOGOUT</a></li>
+                </ul>
+            </nav>
+        </section>
+        <section>
+            <iframe name="content" src="landing.jsp"></iframe>
+        </section>
+        </body>
+</html>

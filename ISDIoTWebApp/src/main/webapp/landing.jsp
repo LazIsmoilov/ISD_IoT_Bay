@@ -1,5 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8" %>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -192,7 +191,7 @@
 
   <div class="stats">
     <div class="stat-item">
-      <div class="stat-number"><%= 6 %></div>
+      <div class="stat-number">6</div>
       <div class="stat-label">Registered Users</div>
     </div>
     <div class="stat-item">
@@ -229,30 +228,5 @@
     </div>
   </div>
 </div>
-
-<script>
-  // Animate stats counter
-  document.addEventListener('DOMContentLoaded', function() {
-    const counters = document.querySelectorAll('.stat-number');
-    const targets = [6, 50, 24];
-    const duration = 1500;
-
-    counters.forEach((counter, index) => {
-      let count = 0;
-      const target = targets[index];
-      const increment = target / (duration / 16);
-
-      const animate = () => {
-        if (count < target) {
-          count += increment;
-          counter.textContent = index === 2 ? Math.floor(count) : Math.floor(count) + (index === 1 ? "+" : "");
-          requestAnimationFrame(animate);
-        }
-      };
-
-      setTimeout(animate, index * 300);
-    });
-  });
-</script>
 </body>
 </html>

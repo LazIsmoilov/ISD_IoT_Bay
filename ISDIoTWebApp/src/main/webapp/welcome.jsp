@@ -33,7 +33,6 @@
       --text-light: #f8f9fa;
       --card-bg: rgba(255, 255, 255, 0.15);
       --card-hover: rgba(255, 255, 255, 0.25);
-      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
     * {
@@ -49,7 +48,6 @@
       min-height: 100vh;
       padding: 2rem;
       line-height: 1.6;
-      transition: background 0.5s ease;
     }
 
     .container {
@@ -61,7 +59,6 @@
     .user-header {
       text-align: center;
       margin-bottom: 2.5rem;
-      animation: fadeInDown 0.8s ease-out;
     }
 
     .user-header h1 {
@@ -91,7 +88,6 @@
       max-width: 500px;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      animation: fadeIn 0.8s ease-out 0.2s both;
     }
 
     .profile-info {
@@ -166,15 +162,12 @@
       backdrop-filter: blur(10px);
       border-radius: 16px;
       padding: 1.5rem;
-      transition: var(--transition);
       border: 1px solid rgba(255, 255, 255, 0.1);
       cursor: pointer;
     }
 
     .device-card:hover {
-      transform: translateY(-5px);
       background: var(--card-hover);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
 
     .device-icon {
@@ -212,7 +205,6 @@
       border-radius: 50px;
       font-weight: 500;
       text-decoration: none;
-      transition: var(--transition);
       border: none;
       cursor: pointer;
     }
@@ -223,30 +215,10 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
 
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15);
-    }
-
     .btn-outline {
       background: transparent;
       color: white;
       border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-    .btn-outline:hover {
-      background: rgba(255, 255, 255, 0.1);
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
     }
 
     /* Responsive */
@@ -370,13 +342,5 @@
     </a>
   </div>
 </div>
-
-<script>
-  // Dynamic background color adjustment
-  document.addEventListener('DOMContentLoaded', function() {
-    // Add any interactive JavaScript here if needed
-    console.log('Welcome <%= userName %>! Your color theme is <%= userColor %>');
-  });
-</script>
 </body>
 </html>

@@ -48,7 +48,6 @@
       max-width: 420px;
       position: relative;
       overflow: hidden;
-      animation: fadeIn 0.5s ease-out;
     }
 
     .login-container::before {
@@ -88,7 +87,6 @@
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
-      position: relative;
     }
 
     .form-group label {
@@ -106,7 +104,7 @@
       left: 1rem;
       top: 50%;
       transform: translateY(-50%);
-      color: var(--text-light);
+      color: var(--primary);
       font-size: 1rem;
     }
 
@@ -117,7 +115,6 @@
       border-radius: 10px;
       font-family: 'Poppins', sans-serif;
       font-size: 0.95rem;
-      transition: all 0.3s ease;
       background-color: #f8fafc;
       box-shadow: var(--input-shadow);
     }
@@ -127,11 +124,6 @@
       border-color: var(--primary-light);
       box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
       background-color: white;
-    }
-
-    .form-control::placeholder {
-      color: var(--text-light);
-      opacity: 0.7;
     }
 
     .btn-login {
@@ -144,15 +136,9 @@
       font-weight: 500;
       font-size: 1rem;
       cursor: pointer;
-      transition: all 0.3s ease;
       margin-top: 0.5rem;
       letter-spacing: 0.5px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    }
-
-    .btn-login:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1);
     }
 
     .login-footer {
@@ -166,7 +152,6 @@
       color: var(--primary);
       text-decoration: none;
       font-weight: 500;
-      transition: all 0.2s;
     }
 
     .login-footer a:hover {
@@ -182,16 +167,10 @@
     .forgot-password a {
       font-size: 0.8rem;
       color: var(--text-light);
-      transition: color 0.2s;
     }
 
     .forgot-password a:hover {
       color: var(--primary);
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 480px) {
@@ -241,17 +220,5 @@
     Don't have an account? <a href="register.jsp">Create one now</a>
   </div>
 </div>
-
-<script>
-  // Simple animation for input focus
-  document.querySelectorAll('.form-control').forEach(input => {
-    input.addEventListener('focus', function() {
-      this.parentElement.querySelector('i').style.color = 'var(--primary)';
-    });
-    input.addEventListener('blur', function() {
-      this.parentElement.querySelector('i').style.color = 'var(--text-light)';
-    });
-  });
-</script>
 </body>
 </html>

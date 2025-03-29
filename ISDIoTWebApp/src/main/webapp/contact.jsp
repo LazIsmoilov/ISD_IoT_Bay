@@ -278,7 +278,7 @@
                 </div>
                 <div class="info-content">
                     <h3>Our Location</h3>
-                    <p>123 IoT Boulevard<br>Tech Park, Sydney NSW 2000<br>Australia</p>
+                    <p>UTS Building 11<br>81 Broadway, Ultimo NSW 2007<br>Australia</p>
                 </div>
             </div>
 
@@ -316,29 +316,14 @@
 
     <!-- Map Section -->
     <div class="map-container">
-        <!-- Embedded Google Map -->
+        <!-- Embedded Google Map for UTS Building 11 -->
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.783712420512!2d151.1983083152106!3d-33.8832643806576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae1c1ce2c9d9%3A0x1a3b3b3b3b3b3b3b!2sUTS%20Building%2011!5e0!3m2!1sen!2sau!4v1625060000000!5m2!1sen!2sau"
                 width="100%"
                 height="100%"
                 style="border:0;"
                 allowfullscreen=""
-                loading="lazy"></>
+                loading="lazy"></iframe>
     </div>
 </div>
-
-<script>
-    // Form validation would go here
-    document.addEventListener('DOMContentLoaded', function() {
-        const contactForm = document.querySelector('form');
-
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                // Add form validation logic here
-                console.log('Form submitted');
-                // e.preventDefault(); // Uncomment to prevent actual submission during testing
-            });
-        }
-    });
-</script>
 </body>
 </html>

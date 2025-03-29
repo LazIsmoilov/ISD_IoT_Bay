@@ -1,5 +1,11 @@
-<%@page contentType="text/html" pageEncoding="UTF-8" %>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    // Get the current page from request parameter
+    String currentPage = request.getParameter("page");
+    if (currentPage == null) {
+        currentPage = "landing"; // default page
+    }
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,13 +48,6 @@
             font-size: 1.5rem;
             font-weight: bold;
             color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo i {
-            color: var(--accent);
         }
 
         nav {
@@ -130,46 +129,21 @@
 <body>
 <header>
     <div class="logo">
-        <i class="fas fa-bolt"></i>
-        <span>IoT Bay</span>
+        IoT Bay
     </div>
 </header>
 
 <nav>
     <ul>
-        <li><a href="landing.jsp" target="content" class="active">HOME</a></li>
-        <li><a href="register.jsp" target="content">REGISTER</a></li>
-        <li><a href="about.jsp" target="content">ABOUT</a></li>
-        <li><a href="contact.jsp" target="content">CONTACT</a></li>
-        <li><a href="logout.html" target="content">LOGOUT</a></li>
+        <li><a href="landing.jsp?page=landing" target="content" class="<%= currentPage.equals("landing") ? "active" : "" %>">HOME</a></li>
+        <li><a href="register.jsp?page=register" target="content" class="<%= currentPage.equals("register") ? "active" : "" %>">REGISTER</a></li>
+        <li><a href="about.jsp?page=about" target="content" class="<%= currentPage.equals("about") ? "active" : "" %>">ABOUT</a></li>
+        <li><a href="contact.jsp?page=contact" target="content" class="<%= currentPage.equals("contact") ? "active" : "" %>">CONTACT</a></li>
+        <li><a href="logout.html?page=logout" target="content" class="<%= currentPage.equals("logout") ? "active" : "" %>">LOGOUT</a></li>
     </ul>
 </nav>
 
-<iframe name="content" src="landing.jsp"></iframe>
+<iframe name="content" src="<%= currentPage.equals("landing") ? "landing.jsp" : currentPage + ".jsp" %>"></iframe>
 
-<script>
-    // Highlight active nav link based on iframe content
-    document.addEventListener('DOMContentLoaded', function() {
-        const navLinks = document.querySelectorAll('nav a');
-        const iframe = document.querySelector('iframe');
-
-        // Set initial active state
-        navLinks.forEach(link => {
-            if (link.href.includes(iframe.src)) {
-                link.classList.add('active');
-            }
-        });
-
-        // Update active state when iframe navigates
-        iframe.addEventListener('load', function() {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.href.includes(iframe.contentWindow.location.pathname)) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    });
-</script>
 </body>
 </html>

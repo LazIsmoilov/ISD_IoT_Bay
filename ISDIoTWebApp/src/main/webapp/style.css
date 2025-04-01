@@ -193,6 +193,7 @@ button:hover {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+
 .add-to-cart {
     background-color: gray; /* Green */
     color: white;
@@ -235,8 +236,8 @@ button:hover {
     border-radius: 12px;
     text-align: center;
     min-width: 150px;
-    box-shadow: 0 4px 12px
-    border: 1px solid
+    box-shadow: 0 4px 12px;
+    border: 1px solid;
 }
 
 .stat-number {

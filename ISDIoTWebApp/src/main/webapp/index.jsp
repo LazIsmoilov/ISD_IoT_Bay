@@ -2,9 +2,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 
 <%
-
-    User user = (User)session.getAttribute("user");
-
+    User user = (User) session.getAttribute("user");
 %>
 
 <html>
@@ -13,6 +11,45 @@
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
 
+    <style>
+        /* Style to match button links */
+        .nav-button {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            background-color: gray;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .nav-button:hover {
+        color: black;
+        }
+
+        /* Remove default form styling */
+        .nav-form {
+            display: inline;
+        }
+
+        .nav-form button {
+            all: unset; /* Reset all button styles */
+            padding: 10px 20px; /* Match other buttons */
+            color: white;
+            background-color: gray;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .nav-form button:hover {
+            color: black;
+        }
+    </style>
+
 </head>
 <body>
 <header>
@@ -20,22 +57,28 @@
 <section>
     <nav>
         <ul>
-            <li><a href="landing.jsp" target="content">HOME</a></li>
-            <li><a href="register.jsp" target="content">REGISTER</a></li>
-            <li><a href="#">ABOUT</a></li>
-            <li><a href="#">CONTACT</a></li>
+            <li>
+                <form action="index.jsp" method="get" class="nav-form">
+                    <input type="hidden" name="page" value="landing.jsp">
+                    <button type="submit">HOME</button>
+                </form>
+            </li>
+            <li><a href="register.jsp" class="nav-button" target="content">REGISTER</a></li>
+            <li><a href="#" class="nav-button">ABOUT </a></li>
+            <li><a href="#" class="nav-button">CONTACT</a></li>
+            <li><a href="main.jsp" class="nav-button" target="content">MAIN</a></li>
         </ul>
 
             <h2>Logged in user:
                 <%
-                    if (user == null) {
+                    if (session.getAttribute("user") == null) {
                 %>
                 No one
                 <%
-                }
-                else {
+                } else {
+                    User user1 = (User) session.getAttribute("user");
                 %>
-                <%=user.getEmail()%>
+                <%=user1.getEmail()%>
                 <%
                     }
                 %>
@@ -44,45 +87,9 @@
         <%
             if (user != null) {
         %>
+
         <div class="user-box">
             <a href="edit.jsp" target="content"> <button>EDIT DETAILS</button></a>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
             <a href="Logout.jsp"><button>LOGOUT</button></a>
         </div>
         <%

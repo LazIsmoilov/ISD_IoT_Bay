@@ -1,5 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
-<%@page session="true" %>
+<%@ page import="uts.isd.model.User" %>
 
 <!DOCTYPE html>
 <html>
@@ -132,9 +132,6 @@
             </div>
         </div>
     </div>
-
-
-
 </div>
 </body>
 </html>

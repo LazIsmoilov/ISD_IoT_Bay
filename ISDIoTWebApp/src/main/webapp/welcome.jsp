@@ -1,7 +1,7 @@
+<%@ page import="uts.isd.model.User" %>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@page session="true" %>
 
-<!DOCTYPE html>
 <html>
 <head>
   <title>IoT Bay Dashboard</title>
@@ -10,7 +10,14 @@
 </head>
 
 <%
+  String name = request.getParameter("name");
+  String email = request.getParameter("email");
+  String password = request.getParameter("password");
+  String dob = request.getParameter("dob");
+  String gender = request.getParameter("gender");
   String userName = request.getParameter("name");
+  User user = new User(name, email, password, dob, gender);
+  session.setAttribute("user", user);
 %>
 
 <body>

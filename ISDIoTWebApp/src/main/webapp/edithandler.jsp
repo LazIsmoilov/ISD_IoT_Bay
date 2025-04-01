@@ -17,5 +17,5 @@
     user.setGender(gender);
 
     session.setAttribute("user", user);
-    response.sendRedirect("landing.jsp");
+    response.sendRedirect("index.jsp");
 %>

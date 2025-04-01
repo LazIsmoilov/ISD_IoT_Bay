@@ -6,9 +6,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Registration page</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <%@ include file="header.jsp" %>
 
 </head>
 <body>
+
+<pref-header></pref-header>
 
 <div class="form-container">
     <h1>Sign up</h1>

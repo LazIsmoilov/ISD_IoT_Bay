@@ -5,8 +5,11 @@
   <title>Profile Page</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link rel="stylesheet" href="style.css">
+  <%@ include file="header.jsp" %>
+
 </head>
 <body>
+<pref-header></pref-header>
 
 <%
   // Retrieve the current user from session

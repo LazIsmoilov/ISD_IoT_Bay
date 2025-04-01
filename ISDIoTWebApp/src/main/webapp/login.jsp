@@ -6,9 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link rel="stylesheet" href="style.css">
+  <%@ include file="header.jsp" %>
+
 
 </head>
 <body>
+
+<pref-header></pref-header>
+
 <div class="form-container">
   <h1>Log in</h1>
   <form action="welcome.jsp" method="post">

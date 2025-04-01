@@ -6,10 +6,14 @@
 <head>
     <title>IoT Bay Dashboard</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <%@ include file="header.jsp" %>
 
 </head>
 
 <body>
+
+<pref-header></pref-header>
+
 <div class="content">
     <h1>Recommended IoT Devices</h1>
 

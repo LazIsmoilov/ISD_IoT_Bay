@@ -6,6 +6,15 @@ body {
     padding: 0;
 }
 
+.items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    gap: 100px;
+}
+
 .login {
     position: absolute;
     bottom: 7%;

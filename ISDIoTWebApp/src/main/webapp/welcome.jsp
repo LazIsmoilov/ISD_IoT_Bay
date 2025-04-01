@@ -1,26 +1,44 @@
-<%@ page import="uts.isd.model.User" %>
-<!DOCTYPE html>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@page session="true" %>
 
+<!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-    <title>Welcome Page</title>
-    <link rel="stylesheet" href="style.css">
+  <title>IoT Bay Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 
-<body>
-<h1><%= "Welcome, " + request.getParameter("firstName")%></h1>
-<div>
-    <a class="button" href="index.jsp"> Cancel</a>
-    <a class="button" href="main.jsp">Main</a>
-</div>
 <%
-    String firstName = request.getParameter("firstName");
-    String lastName = request.getParameter("lastName");
-    String email = request.getParameter("email");
-    String password = request.getParameter("password");
-    User user = new User(firstName, lastName, email, password);
-    session.setAttribute("user", user);
+  String userName = request.getParameter("name");
 %>
+
+<body>
+<div class="content">
+  <div class="main-header">
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h1>Welcome to IOT Bay, <%= userName != null ? userName : "Guest" %>!</h1>
+    <p>Your premier destination for high-quality IoT devices and technology solutions.
+      Explore our extensive collection of smart devices, components, and accessories
+      that will transform your digital experience.</p>
+  </div>
+
+  <p>
+    <a href="main.jsp">Explore More Devices</a>
+  </p>
+</div>
 </body>
 </html>

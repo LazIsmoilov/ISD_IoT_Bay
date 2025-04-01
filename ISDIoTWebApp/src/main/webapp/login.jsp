@@ -1,29 +1,44 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login Page</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width-device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-<div>
-<h1>Sign in</h1>
-<form action="welcome.jsp">
+<div class="form-container">
+  <h1>Log in</h1>
+  <form action="welcome.jsp" method="post">
     <table>
-        <tr>
-            <td><label for="email">Email address:</label></td>
-            <td><input type="email" placeholder="Enter email" id="email" name="email" required></td>
-        </tr>
-        <tr>
-            <td><label for="password">Password:</label></td>
-            <td><input type="password" placeholder="Enter password" id="password" name="password" required></td>
-        </tr>
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email" placeholder="your@email.com" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="•••••••" required>
+
+      <br>
+
+      <div class="forgot-password">
+        <a href="forgot-password.jsp">Forgot password?</a>
+      </div>
+
+      <br>
+
+      <button type="submit" class="submit-btn">Login</button>
+
+      <br>
+      <br>
+
+      <div>
+        Don't have an account? <a href="register.jsp">Create one now</a>
+      </div>
     </table>
-    <div style="text-align: center">
-        <input type="submit" value="Sign in">
-    </div>
-</form>
+  </form>
 </div>
 </body>
 </html>

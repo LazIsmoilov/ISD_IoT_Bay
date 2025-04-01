@@ -1,32 +1,30 @@
 package uts.isd.model;
 
-public class User {
-    private String firstName;
-    private String lastName;
+import java.io.Serializable;
+
+public class User implements Serializable {
+    private String name;
     private String email;
     private String password;
+    private String dob;
+    private String gender;
 
-    public User(String firstName, String lastName, String email, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    // Constructor
+    public User(String name, String email, String password, String dob, String gender) {
+        this.name = name;
         this.email = email;
         this.password = password;
+        this.dob = dob;
+        this.gender = gender;
     }
 
-    public String getFirstName() {
-        return firstName;
+    // Getters and Setters
+    public String getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -45,4 +43,19 @@ public class User {
         this.password = password;
     }
 
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 }

@@ -1,163 +1,276 @@
-/* General body styling */
 body {
-    background: url("background.jpg") no-repeat center center fixed;
-    background-size: cover;
     font-family: Arial, sans-serif;
+    background-color: #f3efef;
+    text-align: center;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9; /* Light, neutral background */
-    color: rgb(19, 18, 18); /* Dark gray text for readability */
-    line-height: 1.6; /* Improved readability */
+}
+
+.login {
+    position: absolute;
+    bottom: 7%;
+    right: 2%;
+    text-transform: uppercase;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 20px;
+    margin: 20px;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 p {
-    font-weight: bold;
-    text-decoration: #ffffff;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    text-align:center;
 }
 
-/* Header styling */
-h1 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #ffffff; /* Calming green for the header */
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-/* Links styling */
-a {
-    color: #007BFF; /* Classic blue for links */
-    text-decoration: none;
-}
-
-a:active {
-    color: red;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Div styling */
-div {
-    margin: 20px auto;
-    width: 85%; /* Slightly wider layout for balance */
-    max-width: 600px; /* Increased max-width for modern readability */
-    text-align: center;
-    padding: 10px;
-}
-
-/* Form styling */
-form {
-    background-color: #ffffff; /* White form background */
-    padding: 20px; /* Increased padding for better spacing */
-    border: 1px solid #ddd; /* Subtle border */
-    border-radius: 10px; /* Rounded corners for a polished look */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
-    margin-top: 20px;
-}
-
-/* Table styling within the form */
-table {
-    width: 100%;
-    margin: 0 auto;
-    border-collapse: collapse; /* Removed gaps between table cells */
-}
-
-table {
-    width: 100%;
-    border: 1px solid #ddd;
-    border-collapse: collapse;
-    margin-bottom: 20px; /* Adds space below the table */
-    border-radius: 50px;
-}
-
-td {
-    padding: 10px;
-    vertical-align: middle; /* Center-align content within cells */
-    text-align: left; /* Improved text alignment for labels */
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 10px;
+ul {
+    margin:0;
+    padding:0;
+    list-style-type: none;
     text-align: left;
+    margin: 20px;
 }
 
-thead {
-    background-color: #f4f4f4;
-    font-weight: bold;
+li {
+    display: inline-block;
+    margin: 0 20px 0 0;
 }
 
-tr {
-    background-color: #f9f9f9;
+.header {
+    background: white;
+    text-align: center;
+    display: flex;
+    padding: 0px 50px 0px 50px;
+    font-weight: 200;
+    margin: auto;
 }
 
-label {
-    /* Make labels stand out */
-    font-weight: bold;
-    display: block; /* Ensure proper spacing between label and input */
-    margin-bottom: 5px;
+.column {
+    background: white;
+    color: red;
+    flex: 1;
+    width: 200px;
+    border: none;
+    padding: 300px;
 }
 
-/* Input field styling */
-input[type="text"],
-input[type="email"],
-input[type="password"],
-select {
+.main-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+iframe {
     width: 100%;
-    padding: 10px;
-    margin: 5px 0;
+    height: 750px;
+}
+
+.main-content {
+    text-align: center;
+}
+
+.content > h1{
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 440px;
+    margin: 50px auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.welcome-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    color: lightslategray;
+}
+
+.container {
+    background-color: white;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 8px; /* Slightly softer edges */
-    box-sizing: border-box;
-    font-size: 1rem;
+    border-radius: 5px;
 }
 
-/* Checkbox alignment */
-input[type="checkbox"] {
-    margin-right: 5px; /* Improved spacing for better visibility */
-}
-
-/* Submit button styling */
 input[type="submit"] {
-    background-color: #4CAF50; /* Matching green as header */
+    background: #0066cc;
     color: white;
     border: none;
-    padding: 12px 20px; /* Larger button for emphasis */
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 5px;
     cursor: pointer;
-    margin-top: 15px;
 }
 
 input[type="submit"]:hover {
-    background-color: #45A049; /* Slightly darker shade on hover */
+    background: #ff6600;
 }
 
-/* Center alignment for the register button container */
-div[style="text-align: center"] {
-    margin-top: 15px;
+.device {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-.button {
-    display: inline-block;
-    text-decoration: none; /* Removes the underline */
-    padding: 10px 20px; /* Adds spacing inside the button */
-    background-color: #4caf4e; /* Adds a blue background color */
-    color: #ffffff; /* Makes the text color white */
-    border-radius: 5px; /* Rounds the corners */
-    font-size: 16px; /* Sets the font size */
-    font-family: Arial, sans-serif; /* Sets the font family */
-    text-align: center; /* Centers the text */
+.device-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
 }
 
-span {
-    font-size: 18px; /* Slightly smaller font */
-    color: #28a745; /* Green for success messages */
-    font-style: italic; /* Adds emphasis */
+.device-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+.device-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
 
+button {
+    border-color: black;
+    background-color: transparent;
+    padding: 10px;
+    width: 250px;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+/*For details*/
+.buttons {
+    background-color: gray;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buttons:hover {
+    background-color: darkgray;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.add-to-cart {
+    background-color: gray; /* Green */
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px; /* Oval shape */
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Space between text and icon */
+}
+
+.add-to-cart:hover {
+    background-color: darkgray; /* Darker green */
+    transform: scale(1.05); /* Slightly enlarge */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.checkbox-group input {
+    width: auto;
+}
+
+.checkbox-group label {
+    font-size: 0.8rem;
+}
+
+.stats {
+    display: flex;
+    gap: 2rem;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.stat-item {
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 150px;
+    box-shadow: 0 4px 12px
+    border: 1px solid
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    color: Black;
+}
+
+section {
+    background: gray;
+    color: white;
+    padding: 20px;
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+}
+
+#intro_id1 {
+    text-align: center;
+    color: black;
+    font-size:x-large;
+    font-family: 'Times New Roman', Times, serif;
+    margin: auto;
+}
 

@@ -1,63 +1,73 @@
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@page session="true" %>
+
 <!DOCTYPE html>
+
 <html>
 <head>
-    <title>Register Page</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width-device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Registration page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 <body>
-<div>
-    <h1>Sign Up</h1>
-    <form method="post" action="welcome.jsp">
-<%--        <fieldset>--%>
-            <table>
-                <tr>
-                    <td><label for="email">Email address:</label></td>
-                    <td><input type="email" placeholder="Enter email" id="email" name="email" required></td>
-                </tr>
-                <tr>
-                    <td><label for="firstName">First name:</label></td>
-                    <td><input type="text" placeholder="Enter firstname" id="firstName" name="firstName" required></td>
-                </tr>
-                <tr>
-                    <td><label for="lastName">Last name:</label></td>
-                    <td><input type="text" placeholder="Enter surname" id="lastName" name="lastName" required></td>
-                </tr>
-                <tr>
-                    <td><label for="password">Password:</label></td>
-                    <td><input type="password" placeholder="Enter password" id="password" name="password" required></td>
-                </tr>
-                <tr>
-                    <td><label for="gender">Gender:</label></td>
-                    <td>
-                        <select id="gender" name="gender" required>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="favcol">Favourite colour:</label></td>
-                    <td>
-                        <select id="favcol" name="favcol">
-                            <option value="blue">Blue</option>
-                            <option value="red">Red</option>
-                            <option value="white">White</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="tos">TOS:</label></td>
-                    <td><input type="checkbox" id="tos" name="tos" required></td>
-                </tr>
-            </table>
-            <div style="text-align: center">
-                <input type="submit" value="Register">
+
+<div class="form-container">
+    <h1>Sign up</h1>
+    <form action="welcome.jsp" method="post">
+        <table>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="John Smith" required>
             </div>
-<%--        </fieldset>--%>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="•••••••" required minlength="7">
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <br>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="agreeToTOS" name="agreeToTOS" value="yes" required>
+                <label for="agreeToTOS">I agree to the Terms of Service</label>
+            </div>
+
+            <br>
+
+        <button type="submit" class="submit-btn">Register</button>
+
+            <br>
+            <br>
+
+        <div>
+            Already have an account? <a href="login.jsp">Sign in</a>
+        </div>
     </form>
+
+
 </div>
+
+
 </body>
 </html>

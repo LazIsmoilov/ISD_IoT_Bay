@@ -1,76 +1,68 @@
 <%@ page import="uts.isd.model.User" %>
 <!DOCTYPE html>
-
 <html>
 <head>
-    <title>Profile Page</title>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+  <title>Profile Page</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <%
-    User user =  (User) session.getAttribute("user");
-    String updated = request.getParameter("updated");
-%>
-<h1>Edit Profile Information <br><span> <%= (updated != null) ? "Update was successful": ""%></span></h1>
-<form method="post" action="edit.jsp">
-    <%--        <fieldset>--%>
-    <table>
-        <tr>
-            <td><label for="email">Email address:</label></td>
-            <td><input type="email" id="email" name="email" value="<%= user.getEmail()%>" required></td>
-        </tr>
-        <tr>
-            <td><label for="firstName">First name:</label></td>
-            <td><input type="text" id="firstName" name="firstName" value="<%= user.getFirstName()%>" required></td>
-        </tr>
-        <tr>
-            <td><label for="lastName">Last name:</label></td>
-            <td><input type="text" id="lastName" name="lastName" value="<%= user.getLastName()%>" required></td>
-        </tr>
-        <tr>
-            <td><label for="password">Password:</label></td>
-            <td><input type="password" id="password" name="password" value="<%= user.getPassword()%>" required></td>
-        </tr>
-        <tr>
-            <td><label for="gender">Gender:</label></td>
-            <td>
-                <select id="gender" name="gender" required>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td><label for="favcol">Favourite colour:</label></td>
-            <td>
-                <select id="favcol" name="favcol">
-                    <option value="blue">Blue</option>
-                    <option value="red">Red</option>
-                    <option value="white">White</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td><label for="tos">TOS:</label></td>
-            <td><input type="checkbox" id="tos" name="tos" required></td>
-        </tr>
-    </table>
-    <div style="text-align: center">
-        <a type="button" href="index.jsp">Main</a>
-        <input type="submit" value="Update">
-        <input type="hidden" name="updated" value="updated">
-    </div>
-    <%--        </fieldset>--%>
-</form>
-<%
-    String firstName = request.getParameter("firstName");
-    String lastName = request.getParameter("lastName");
-    String email = request.getParameter("email");
-    String password = request.getParameter("password");
-    user = new User(firstName, lastName, email, password);
+  // Retrieve the current user from session
+  User user = (User) session.getAttribute("user");
+
+  // Handle cases where user is null
+  if (user == null) {
+    user = new User("", "", "", "", ""); // Create an empty user object
     session.setAttribute("user", user);
+  }
+
+  String updated = request.getParameter("updated");
 %>
+
+<div class="form-container">
+  <h1>Edit Profile Information <br>
+    <span style="color: green;"><%= (updated != null) ? "Update was successful" : "" %></span>
+  </h1>
+
+  <form method="post" action="edithandler.jsp">
+
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" value="<%= user.getName() %>" required>
+    </div>
+
+    <div>
+      <label for="email">Email address:</label>
+      <input type="email" id="email" name="email" value="<%= user.getEmail() %>" required>
+    </div>
+
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" value="<%= user.getPassword() %>" required>
+    </div>
+
+    <div>
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" value="<%= user.getDob() %>" required>
+    </div>
+
+    <div>
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="male" <%= user.getGender().equals("male") ? "selected" : "" %>>Male</option>
+        <option value="female" <%= user.getGender().equals("female") ? "selected" : "" %>>Female</option>
+        <option value="other" <%= user.getGender().equals("other") ? "selected" : "" %>>Other</option>
+      </select>
+    </div>
+
+    <div style="text-align: center">
+      <input type="submit" value="Update">
+      <input type="hidden" name="updated" value="updated">
+
+    </div>
+  </form>
+</div>
 </body>
 </html>

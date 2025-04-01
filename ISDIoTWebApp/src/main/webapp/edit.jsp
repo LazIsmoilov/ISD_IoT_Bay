@@ -23,7 +23,6 @@
 
 <div class="form-container">
   <h1>Edit Profile Information <br>
-    <span style="color: green;"><%= (updated != null) ? "Update was successful" : "" %></span>
   </h1>
 
   <form method="post" action="edithandler.jsp">

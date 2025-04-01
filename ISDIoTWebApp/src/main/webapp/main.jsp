@@ -7,26 +7,6 @@
     <title>IoT Bay Dashboard</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 
-<style>
-
- .device-actions a {
-    display: inline-block;
-    width: 160px;
-    text-align: center;
-    padding: 8px;
-    margin: 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    background-color: #f2f2f2;
-    text-decoration: none;
-    color: #333;
-    font-size: 14px;
-    font-weight: normal;
-    white-space: nowrap;
-    line-height: 1.2;
-        }
-    </style>
 </head>
 
 <body>

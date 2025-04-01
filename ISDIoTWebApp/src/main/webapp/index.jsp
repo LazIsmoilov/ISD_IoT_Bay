@@ -90,7 +90,7 @@
 
         <div class="user-box">
             <a href="edit.jsp" target="content"> <button>EDIT DETAILS</button></a>
-            <a href="Logout.jsp"><button>LOGOUT</button></a>
+            <a href="logout.jsp"><button>LOGOUT</button></a>
         </div>
         <%
             }

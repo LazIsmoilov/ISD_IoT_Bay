@@ -1,194 +1,163 @@
-
+/* General body styling */
 body {
+    background: url("background.jpg") no-repeat center center fixed;
+    background-size: cover;
     font-family: Arial, sans-serif;
-    background-color: #f3efef;
-    text-align: center;
     margin: 0;
     padding: 0;
-}
-
-.header {
-    background: black;
-    text-align: center;
-    display: flex;
-    padding: 0px 50px 0px 50px;
-    font-weight: 200;
-    margin: auto;
-}
-
-section {
-    background: lightblue;
-    color: white;
-    padding: 20px;
-    display: flex;
-    margin: auto;
-    flex-direction: row;
-}
-
-ul {
-    margin:0;
-    padding:0;
-    list-style-type: none;
-    text-align: left;
-    margin: 20px;
-}
-
-li {
-    display: inline-block;
-    margin: 0 20px 0 0;
+    background-color: #f9f9f9; /* Light, neutral background */
+    color: rgb(19, 18, 18); /* Dark gray text for readability */
+    line-height: 1.6; /* Improved readability */
 }
 
 p {
-    font-family: 'Times New Roman', Times, serif;
-    color: black;
-    text-align:center;
+    font-weight: bold;
+    text-decoration: #ffffff;
 }
 
-
-
+/* Header styling */
 h1 {
     text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    padding: 20px;
-    margin: 20px;
+    font-size: 2.5rem;
+    color: #ffffff; /* Calming green for the header */
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
-h2 {
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
+/* Links styling */
+a {
+    color: #007BFF; /* Classic blue for links */
+    text-decoration: none;
 }
 
-img {
-    width: 300px;
-    height: 200px;
-    display: block;
-    margin: 0 auto;
-    animation-name: fadeIn;
-    animation-duration: 2s;
-}
-
-.bordered {
-    border: 3px solid;
-    border-color: lightblue;
-    border-width: medium;
-    padding: 30px;
-}
-
-.column {
-    background: white;
+a:active {
     color: red;
-    flex: 1;
-    width: 200px;
-    border: none;
-    padding: 300px;
 }
 
-.header {
+a:hover {
+    text-decoration: underline;
+}
+
+/* Div styling */
+div {
+    margin: 20px auto;
+    width: 85%; /* Slightly wider layout for balance */
+    max-width: 600px; /* Increased max-width for modern readability */
     text-align: center;
-    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+}
+
+/* Form styling */
+form {
+    background-color: #ffffff; /* White form background */
+    padding: 20px; /* Increased padding for better spacing */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 10px; /* Rounded corners for a polished look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+    margin-top: 20px;
+}
+
+/* Table styling within the form */
+table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse; /* Removed gaps between table cells */
+}
+
+table {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    margin-bottom: 20px; /* Adds space below the table */
+    border-radius: 50px;
+}
+
+td {
+    padding: 10px;
+    vertical-align: middle; /* Center-align content within cells */
+    text-align: left; /* Improved text alignment for labels */
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+thead {
+    background-color: #f4f4f4;
     font-weight: bold;
 }
 
-
-.content > h1{
-    height: 85%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 100px;
-}
-.main-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-
-
-.container {
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    box-shadow: 0px 0px 10px gray;
-    border-radius: 8px;
-}
-
-.main-content {
-    text-align: center;
-}
-#intro_id1 {
-    text-align: center;
-    color: black;
-    font-size:x-large;
-    font-family: 'Times New Roman', Times, serif;
-    margin: auto;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f3efef;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-
-.form-container {
-    width: 300px;
-    margin: 50px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
-}
-
-input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-input[type="submit"] {
-    background: #0066cc;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-input[type="submit"]:hover {
-    background: #ff6600;
-}
-
-h1 {
-    color: #333;
-}
-
-a {
-    text-decoration: none;
-    color: #0066cc;
-}
-
-a:hover {
-    color: #ff6600;
-}
-
-.device-card {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
+tr {
     background-color: #f9f9f9;
 }
 
-iframe {
+label {
+    /* Make labels stand out */
+    font-weight: bold;
+    display: block; /* Ensure proper spacing between label and input */
+    margin-bottom: 5px;
+}
+
+/* Input field styling */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
     width: 100%;
-    height: 700px;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Slightly softer edges */
+    box-sizing: border-box;
+    font-size: 1rem;
 }
-a:hover {
-    color: #ff6600;
+
+/* Checkbox alignment */
+input[type="checkbox"] {
+    margin-right: 5px; /* Improved spacing for better visibility */
 }
+
+/* Submit button styling */
+input[type="submit"] {
+    background-color: #4CAF50; /* Matching green as header */
+    color: white;
+    border: none;
+    padding: 12px 20px; /* Larger button for emphasis */
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45A049; /* Slightly darker shade on hover */
+}
+
+/* Center alignment for the register button container */
+div[style="text-align: center"] {
+    margin-top: 15px;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none; /* Removes the underline */
+    padding: 10px 20px; /* Adds spacing inside the button */
+    background-color: #4caf4e; /* Adds a blue background color */
+    color: #ffffff; /* Makes the text color white */
+    border-radius: 5px; /* Rounds the corners */
+    font-size: 16px; /* Sets the font size */
+    font-family: Arial, sans-serif; /* Sets the font family */
+    text-align: center; /* Centers the text */
+}
+
+span {
+    font-size: 18px; /* Slightly smaller font */
+    color: #28a745; /* Green for success messages */
+    font-style: italic; /* Adds emphasis */
+}
+
+
 

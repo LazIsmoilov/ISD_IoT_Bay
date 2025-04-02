@@ -51,9 +51,6 @@
 
 <div class="main-content">
     <br>
-    <%
-        out.println("Registered Users: " + 6 );
-    %>
     <br>
     <br>
     <a href="register.jsp"><button>ENTER</button></a>

@@ -1,141 +1,43 @@
-<%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@ page import="uts.isd.model.User" %>
+<%@ page contentType="text/html" pageEncoding="UTF-8" %>
+<%
+    // Retrieve the user object from the session
+    User user = (User) session.getAttribute("user");
 
+    // Redirect to login page if no user is found in session
+    if (user == null) {
+        response.sendRedirect("login.jsp");
+        return;
+    }
+
+    // Check for any session message (e.g., from successful profile update)
+    String message = (String) session.getAttribute("message");
+    if (message != null) {
+%>
+<p style="color: green; text-align: center;"><%= message %></p>
+<%
+        session.removeAttribute("message"); // Clear the message after displaying it
+    }
+%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IoT Bay Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <%@ include file="header.jsp" %>
-
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<pref-header></pref-header>
-
-<div class="content">
-    <h1>Recommended IoT Devices</h1>
-
-    <div class="device">
-        <div class="device-card">
-            <div>
-                <h3>🔦 Smart Light Blubs</h3>
-                <p>Brighten your home with customizable lighting that adapts to your schedule and preferences.</p>
-            </div>
-            <div class="device-actions">
-                <a href="#" class="buttons">Details
-                </a>
-
-                <a href="#" class="add-to-cart"> 🛒Add to Cart
-                </a>
-            </div>
-        </div>
-
-        <div class="device-card">
-            <div>
-                <h3>📸 Security Camera</h3>
-                <p>Protect your home with 4K resolution, night vision, and smart motion detection.</p>
-            </div>
-            <div class="device-actions">
-                <a href="#" class="buttons">Details
-                </a>
-
-                <a href="#" class="add-to-cart"> 🛒Add to Cart
-                </a>
-            </div>
-        </div>
-
-        <div class="device-card">
-            <div>
-                <h3>🌡️ Smart Thermostat</h3>
-                <p>Save energy with intelligent temperature control that learns your habits and preferences.</p>
-            </div>
-            <div class="device-actions">
-                <a href="#" class="buttons">Details
-                </a>
-
-                <a href="#" class="add-to-cart"> 🛒Add to Cart
-                </a>
-            </div>
-        </div>
-
-        <div class="device-card">
-            <div>
-                <h3>🔐 Smart Door Lock</h3>
-                <p>Secure your home with keyless entry and remote access.</p>
-            </div>
-            <div class="device-actions">
-                <a href="#" class="buttons">Details
-                </a>
-
-                <a href="#" class="add-to-cart"> 🛒Add to Cart
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <br>
-    <br>
-    <br>
-
-    <div class="device">
-        <div class="device-card">
-            <div>
-                <h3>🎵 Smart Speaker</h3>
-                <p>Play music, control smart devices, and get answers with voice commands.</p>
-            </div>
-            <div class="device-actions">
-                <a href="#" class="buttons">Details
-                </a>
-
-                <a href="#" class="add-to-cart"> 🛒Add to Cart
-                </a>
-            </div>
-        </div>
-
-        <div class="device-card">
-            <div>
-                <h3>📺 Smart TV</h3>
-                <p>Stream your favorite shows with built-in apps and voice control.</p>
-            </div>
-            <div class="device-actions">
-                <a href="#" class="buttons">Details
-                </a>
-
-                <a href="#" class="add-to-cart"> 🛒Add to Cart
-                </a>
-            </div>
-        </div>
-
-        <div class="device-card">
-            <div>
-                <h3>🚗 Smart GPS Tracker</h3>
-                <p>Keep track of your car or valuables with real-time location updates.</p>
-            </div>
-            <div class="device-actions">
-                <a href="#" class="buttons">Details
-                </a>
-
-                <a href="#" class="add-to-cart"> 🛒Add to Cart
-                </a>
-            </div>
-        </div>
-
-        <div class="device-card">
-            <div>
-                <h3>💨 Smart Air Purifier</h3>
-                <p>Improve air quality with automatic filtration based on pollution levels.</p>
-            </div>
-            <div class="device-actions">
-                <a href="#" class="buttons">Details
-                </a>
-
-                <a href="#" class="add-to-cart"> 🛒Add to Cart
-                </a>
-            </div>
-        </div>
-    </div>
+<div class="dashboard-container">
+    <h1>Welcome back, <%= user.getName() %>!</h1>
+    <main>
+        <p>Discover the latest IoT devices tailored for your smart home and beyond.</p>
+        <a href="edit.jsp" class="submit-btn">Edit Profile</a>
+        <a href="logout.jsp" class="submit-btn">Log out</a>
+    </main>
 </div>
 </body>
 </html>
+
+
+

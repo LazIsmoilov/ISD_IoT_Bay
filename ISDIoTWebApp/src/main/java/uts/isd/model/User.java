@@ -9,6 +9,10 @@ public class User implements Serializable {
     private String dob;
     private String gender;
 
+    // Default constructor
+    public  User() {
+    }
+
     // Constructor
     public User(String name, String email, String password, String dob, String gender) {
         this.name = name;

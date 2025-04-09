@@ -79,6 +79,13 @@
             </select>
         </div>
 
+        <div class="form-container">
+            <h1> Sign up</h1>
+            <form action="register.jsp"method="post">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="agreeToTOS" name="agreeToTOS" value="yes" required>
+                    <label for="agreeToTOS">I agree to the <a href=" ">Terms of Service</a></label>label>
+        </div>
         <button type="submit" class="submit-btn">Register</button>
 
         <p>Already have an account? <a href="login.jsp">Sign in</a></p>

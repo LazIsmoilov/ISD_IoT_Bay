@@ -80,11 +80,10 @@
         </div>
 
         <div class="form-container">
-            <h1> Sign up</h1>
-            <form action="register.jsp"method="post">
+            <form action="register.jsp" method="post">
                 <div class="checkbox-group">
                     <input type="checkbox" id="agreeToTOS" name="agreeToTOS" value="yes" required>
-                    <label for="agreeToTOS">I agree to the <a href=" ">Terms of Service</a></label>label>
+                    <label for="agreeToTOS">I agree to the <a href="">Terms of Service</a></label>
         </div>
         <button type="submit" class="submit-btn">Register</button>
 

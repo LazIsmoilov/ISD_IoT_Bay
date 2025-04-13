@@ -1,32 +1,31 @@
 <%@ page import="uts.isd.model.User" %>
-<%@ page contentType="text/html" pageEncoding="UTF-8" %>
-
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page session="true" %>
+<%
+  // Retrieve the user from the session
+  User user = (User) session.getAttribute("user");
+  String userName = (user != null && user.getName() != null) ? user.getName() : "Guest";
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome - IoT Bay</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IoT Bay Dashboard</title>
   <link rel="stylesheet" href="style.css">
+  <%@ include file="header.jsp" %>
 </head>
 <body>
-
-<%
-  // Retrieve the user object from the session
-  User user = (User) session.getAttribute("user");
-
-  // Redirect to login page if no user is found in session
-  if (user == null) {
-    response.sendRedirect("login.jsp");
-    return;
-  }
-%>
-
-<div class="hero-container">
-  <h1>Welcome, <%= user.getName() %>!</h1>
-  <p>Your gateway to premium IoT devices starts here.</p>
-  <a href="main.jsp" class="submit-btn">Go to Dashboard</a>
+<pref-header></pref-header>
+<div class="content">
+  <div class="main-header">
+    <h1>Welcome to IoT Bay, <%= userName %>!</h1>
+    <p>Your premier destination for high-quality IoT devices and technology solutions.
+      Explore our extensive collection of smart devices, components, and accessories that will transform your digital experience.</p>
+  </div>
+  <p><a href="main.jsp">Explore More Devices</a></p>
 </div>
-
 </body>
 </html>
+
+

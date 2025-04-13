@@ -1,16 +1,14 @@
 <%@ page import="uts.isd.model.User" %>
-<%@ page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%
-  // Retrieve the user object from the session
+  // Retrieve the user from the session
   User user = (User) session.getAttribute("user");
-
-  // Redirect to login if no user is found in session
   if (user == null) {
     response.sendRedirect("login.jsp");
     return;
   }
 
-  // Handle form submission to update user profile
+  // Process the profile update if the request is POST
   if ("POST".equalsIgnoreCase(request.getMethod())) {
     String name = request.getParameter("name");
     String email = request.getParameter("email");
@@ -18,22 +16,18 @@
     String dob = request.getParameter("dob");
     String gender = request.getParameter("gender");
 
-    // (Optional) Validate inputs here
+    // (Optional) Add input validation as needed
 
-    // Update the user object with new values
+    // Update the user object
     user.setName(name);
     user.setEmail(email);
     user.setPassword(password);
     user.setDob(dob);
     user.setGender(gender);
 
-    // Update the session with the modified user object
+    // Update session attribute and set a success message
     session.setAttribute("user", user);
-
-    // Set a success message to be displayed on the main page
     session.setAttribute("message", "Profile updated successfully!");
-
-    // Redirect to main page (dashboard) so the user sees the updated profile and notification
     response.sendRedirect("main.jsp");
     return;
   }
@@ -47,6 +41,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<%@ include file="header.jsp" %>
 <div class="form-container">
   <h1>Edit Profile</h1>
   <form method="post" action="edit.jsp">
@@ -81,5 +76,7 @@
 </div>
 </body>
 </html>
+
+
 
 

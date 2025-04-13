@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="uts.isd.model.User" %>
 <%
-    // Retrieve the logged-in user from session (if any)
+    // Retrieving the logged-in user from session (if any)
     User user = (User) session.getAttribute("user");
 %>
 <!DOCTYPE html>
@@ -44,7 +44,7 @@
 
 <script>
     function logout() {
-        window.location.href = "logout.jsp"; // Matches correct filename
+        window.location.href = "logout.jsp";
     }
 </script>
 </body>

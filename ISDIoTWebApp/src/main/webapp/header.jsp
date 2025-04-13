@@ -78,7 +78,7 @@
                         }
                     %>
                 </div>
-            `;
+            ;
         }
     }
     customElements.define("pref-header", Header);

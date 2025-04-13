@@ -1,14 +1,14 @@
 <%@ page import="uts.isd.model.User" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%
-  // Retrieve the user from the session
+  // Retrieving the user from the session
   User user = (User) session.getAttribute("user");
   if (user == null) {
     response.sendRedirect("login.jsp");
     return;
   }
 
-  // Process the profile update if the request is POST
+  // Processing the profile update if the request is POST
   if ("POST".equalsIgnoreCase(request.getMethod())) {
     String name = request.getParameter("name");
     String email = request.getParameter("email");
@@ -16,16 +16,14 @@
     String dob = request.getParameter("dob");
     String gender = request.getParameter("gender");
 
-    // (Optional) Add input validation as needed
-
-    // Update the user object
+    // Updating the user object
     user.setName(name);
     user.setEmail(email);
     user.setPassword(password);
     user.setDob(dob);
     user.setGender(gender);
 
-    // Update session attribute and set a success message
+    // Updating session attribute and set a success message
     session.setAttribute("user", user);
     session.setAttribute("message", "Profile updated successfully!");
     response.sendRedirect("main.jsp");

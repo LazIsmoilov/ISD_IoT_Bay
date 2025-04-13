@@ -1,13 +1,13 @@
 <%@ page import="uts.isd.model.User" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%
-    // Ensure the user is logged in
+    // Ensuring the user is logged in
     User user = (User) session.getAttribute("user");
     if(user == null) {
         response.sendRedirect("login.jsp");
         return;
     }
-    // Display any session message (e.g., after profile update)
+    // Displaying any session message (e.g., after profile update)
     String message = (String) session.getAttribute("message");
     if(message != null) {
 %>

@@ -1,7 +1,7 @@
 <%@ page import="uts.isd.model.User" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%
-    // Process registration if the method is POST
+    // Processing registration if the method is POST
     if ("POST".equalsIgnoreCase(request.getMethod())) {
         String name = request.getParameter("name");
         String email = request.getParameter("email");
@@ -9,7 +9,7 @@
         String dob = request.getParameter("dob");
         String gender = request.getParameter("gender");
 
-        // Validate inputs (trimming to remove extra spaces)
+        // Validating inputs (trimming to remove extra spaces)
         if (name != null && email != null && password != null && dob != null && gender != null &&
                 !name.trim().isEmpty() && !email.trim().isEmpty() && !password.trim().isEmpty() &&
                 !dob.trim().isEmpty() && !gender.trim().isEmpty()) {
@@ -21,10 +21,8 @@
             user.setDob(dob);
             user.setGender(gender);
 
-            // Store the new user in the session.
+            // Storing the new user in the session.
             session.setAttribute("user", user);
-            // Optionally, you can store it in application scope if needed:
-            // application.setAttribute("registeredUser", user);
 
             response.sendRedirect("welcome.jsp");
             return;

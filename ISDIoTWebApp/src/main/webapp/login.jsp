@@ -1,12 +1,12 @@
 <%@ page import="uts.isd.model.User" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%
-  // Processing login if method is POST
+  // Processing login
   if ("POST".equalsIgnoreCase(request.getMethod())) {
     String email = request.getParameter("email");
     String password = request.getParameter("password");
 
-    // Assuming the registered user is stored in application scope
+    // Assuming the registered user is stored in application
     User regUser = (User) application.getAttribute("registeredUser");
 
     if (regUser != null &&

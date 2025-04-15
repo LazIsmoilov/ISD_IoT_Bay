@@ -55,7 +55,7 @@
                     <div>
                         <h2>Logged in user:
                         <%
-                            // Note: Renamed variable to avoid duplicate declaration error.
+                            //Renamed variable to avoid duplicate declaration error.
                             User loggedInUser = (User) session.getAttribute("user");
                             if(loggedInUser == null) {
                         %>

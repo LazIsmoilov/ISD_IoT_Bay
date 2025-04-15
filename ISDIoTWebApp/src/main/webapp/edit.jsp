@@ -8,7 +8,7 @@
     return;
   }
 
-  // Processing the profile update if the request is POST
+  // Processing the profile update
   if ("POST".equalsIgnoreCase(request.getMethod())) {
     String name = request.getParameter("name");
     String email = request.getParameter("email");

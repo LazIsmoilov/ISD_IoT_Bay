@@ -1,7 +1,7 @@
 <%@ page import="uts.isd.model.User" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%
-    // Processing registration if the method is POST
+    // Processing registration
     if ("POST".equalsIgnoreCase(request.getMethod())) {
         String name = request.getParameter("name");
         String email = request.getParameter("email");
